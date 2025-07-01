@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tip Calculator App" />
+    <meta
+      name="keywords"
+      content="tip calculator, calculator, tip, calculator app, frontend, html, css, javascript, react, mentor, frontendmentor, challenge, javascript challenge, node challenge"
+    />
+    <meta name="author" content="Frontend Mentor" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <h1 class="title"><span>SPLI</span><span>TTER</span></h1>
+    <main>
+      <!-- left -->
+      <div id="main-left">
+        <!-- bill -->
+        <div id="main-left-top">
+          <label for="bill">Bill</label>
+          <div id="bill">
+            <img src="images/icon-dollar.svg" alt="icon dollar" />
+            <input
+              class="input"
+              type="number"
+              name="bill"
+              placeholder="0"
+              value=""
+            />
+          </div>
+        </div>
+
+        <!-- tip selection -->
+        <div id="main-left-middle">
+          <p>Select Tip %</p>
+          <div class="percentage-choice">
+            <button class="button" value="5">5%</button>
+            <button class="button" value="10">10%</button>
+            <button class="button" value="15">15%</button>
+            <button class="button" value="25">25%</button>
+            <button class="button" value="50">50%</button>
+            <input
+              class="input custom"
+              type="number"
+              placeholder="Custom"
+              value=""
+            />
+          </div>
+        </div>
+
+        <!-- number of people -->
+        <div id="main-left-bottom">
+          <div id="people-information">
+            <p>Number of People</p>
+            <p class="if-zero-number"></p>
+          </div>
+          <div id="number-people">
+            <img src="images/icon-person.svg" alt="icon person" />
+            <input
+              class="input"
+              type="number"
+              name=""
+              placeholder="0"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div id="main-right">
+        <!-- tip amount -->
+        <div id="main-right-top">
+          <div>
+            <p class="tip-person">Tip Amount</p>
+            <p class="person">/ person</p>
+          </div>
+          <div class="tip-total">
+            <div class="dollar"></div>
+            <span>$</span><span id="result-tip">0.00</span>
+          </div>
+        </div>
+
+        <!-- total -->
+        <div id="main-right-middle">
+          <div>
+            <p class="tip-person">Total</p>
+            <p class="person">/ person</p>
+          </div>
+          <div class="tip-total">
+            <div class="dollar"></div>
+            <span>$</span><span id="result-total">0.00</span>
+          </div>
+        </div>
+        <button id="button-reset" disabled>Reset</button>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://safeya-yasien-portfolio.netlify.app/" target="_blank"
+        >Safeya Yasien</a
+      >.
+    </div>
+  </body>
+</html>

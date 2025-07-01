@@ -1,0 +1,226 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(185, 41%, 84%);
+  gap: 4rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: hsl(183, 100%, 15%);
+  font-size: 24px;
+}
+h1 span {
+  display: block;
+}
+
+main {
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 20px;
+  max-width: 750px;
+  min-height: 50vh;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+main #main-left,
+main #main-right {
+  display: flex;
+  flex-direction: column;
+}
+main #main-left {
+  gap: 2rem;
+}
+main #main-left p,
+main #main-left label {
+  color: hsl(186, 14%, 43%);
+  font-size: 15px;
+}
+main #main-left input {
+  margin-top: 0.3rem;
+  text-align: end;
+  border: transparent;
+  background: hsl(189, 47%, 97%);
+  padding: 0.5rem 0.4rem;
+  height: 40px;
+  font-size: 20px;
+}
+main #main-left input:focus {
+  outline: none;
+  border: 2px solid hsl(172, 67%, 45%);
+}
+main #main-left #main-left-middle .percentage-choice {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+main #main-left #main-left-middle p {
+  margin-bottom: 0.5rem;
+}
+main #main-left #main-left-middle input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+main #main-left #main-left-middle input.custom {
+  font-size: 20px;
+}
+main #main-left #main-left-middle input.custom::-moz-placeholder {
+  font-size: 20px;
+}
+main #main-left #main-left-middle input.custom::placeholder {
+  font-size: 20px;
+}
+main #main-left #main-left-bottom p {
+  font-size: 13px;
+}
+main #main-left #main-left-bottom #people-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main #main-right {
+  gap: 3rem;
+  padding: 2rem;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 10px;
+  justify-content: space-between;
+}
+main #main-right #main-right-top,
+main #main-right #main-right-middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main #main-right .tip-person {
+  font-size: 13px;
+  color: hsl(0, 100%, 100%);
+}
+main #main-right .person {
+  font-size: 10px;
+  color: hsl(0, 100%, 100%);
+  opacity: 0.7;
+}
+main #main-right .tip-total {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 30px;
+  color: hsl(172, 67%, 45%);
+}
+main #main-right #button-reset {
+  background-color: hsl(183, 47.68%, 28.22%);
+  cursor: pointer;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 2rem;
+  height: 40px;
+}
+main #main-right #button-reset.has-reset-activated {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.button {
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 100%, 100%);
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.button:hover {
+  background-color: hsl(172, 64.1%, 71.35%);
+  color: hsl(183, 100%, 15%);
+}
+.button.active {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+#bill,
+#number-people {
+  display: flex;
+  position: relative;
+}
+#bill input,
+#number-people input {
+  flex: 1;
+  color: hsl(183, 100%, 15%);
+}
+#bill img,
+#number-people img {
+  width: 12px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 3px;
+}
+
+@media (max-width: 800px) {
+  h1.title {
+    margin-top: 2rem;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .attribution {
+    margin: 2rem 1rem;
+    text-align: center;
+  }
+}
+@media (max-width: 400px) {
+  #main-left,
+  #main-right {
+    width: 100%;
+  }
+  #main-left-middle .percentage-choice {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  #main-left-middle input,
+  #main-left-middle .button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+@media (max-width: 300px) {
+  #main-left-middle input,
+  #main-left-middle .button {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

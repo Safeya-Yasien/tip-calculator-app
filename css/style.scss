@@ -1,0 +1,268 @@
+@import "./variables";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-weight: $font-weight;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: map-get($neutral-colors, 200);
+  gap: 4rem;
+}
+
+// Title
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: map-get($neutral-colors, 900);
+  font-size: 24px;
+
+  span {
+    display: block;
+  }
+}
+
+// Main container
+main {
+  background-color: map-get($neutral-colors, 100);
+  border-radius: 20px;
+  max-width: 750px;
+  min-height: 50vh;
+
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  #main-left,
+  #main-right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #main-left {
+    gap: 2rem;
+
+    p,
+    label {
+      color: map-get($neutral-colors, 500);
+      font-size: 15px;
+    }
+
+    input {
+      margin-top: 0.3rem;
+      text-align: end;
+      border: transparent;
+      background: map-get($neutral-colors, 50);
+      padding: 0.5rem 0.4rem;
+      height: 40px;
+      font-size: 20px;
+
+      &:focus {
+        outline: none;
+        border: 2px solid $primary-color;
+      }
+    }
+
+    #main-left-middle {
+      .percentage-choice {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+        width: 100%;
+      }
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+      }
+      input.custom {
+        font-size: 20px;
+
+        &::placeholder {
+          font-size: 20px;
+        }
+      }
+    }
+
+    #main-left-bottom {
+      p {
+        font-size: 13px;
+      }
+
+      #people-information {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+
+  #main-right {
+    gap: 3rem;
+    padding: 2rem;
+    background-color: map-get($neutral-colors, 900);
+    border-radius: 10px;
+    justify-content: space-between;
+
+    #main-right-top,
+    #main-right-middle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tip-person {
+      font-size: 13px;
+      color: map-get($neutral-colors, 100);
+    }
+
+    .person {
+      font-size: 10px;
+      color: map-get($neutral-colors, 100);
+      opacity: 0.7;
+    }
+
+    .tip-total {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-size: 30px;
+      color: $primary-color;
+    }
+
+    #button-reset {
+      background-color: hsl(183deg 47.68% 28.22%);
+      cursor: pointer;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 2rem;
+      height: 40px;
+
+      &.has-reset-activated {
+        background-color: $primary-color;
+        color: map-get($neutral-colors, 900);
+      }
+    }
+  }
+}
+
+// Buttons
+.button {
+  background-color: map-get($neutral-colors, 900);
+  color: map-get($neutral-colors, 100);
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+
+  &:hover {
+    background-color: hsl(172deg 64.1% 71.35%);
+    color: map-get($neutral-colors, 900);
+  }
+
+  &.active {
+    background-color: $primary-color;
+    color: map-get($neutral-colors, 900);
+  }
+}
+
+// Inputs with icon
+#bill,
+#number-people {
+  display: flex;
+  position: relative;
+
+  input {
+    flex: 1;
+    color: map-get($neutral-colors, 900);
+  }
+
+  img {
+    width: 12px;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+  }
+}
+
+// Remove number input arrows
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 3px;
+  }
+}
+
+// Responsive
+@media (max-width: 800px) {
+  h1.title {
+    margin-top: 2rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .attribution {
+    margin: 2rem 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  #main-left,
+  #main-right {
+    width: 100%;
+  }
+
+  #main-left-middle {
+    .percentage-choice {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    input,
+    .button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  #main-left-middle {
+    input,
+    .button {
+      width: 100%;
+    }
+  }
+}
