@@ -58,6 +58,12 @@ main {
       color: map-get($neutral-colors, 500);
       font-size: 15px;
     }
+    p.if-zero-number {
+      color: red;
+      opacity: 0.5;
+      font-size: 12px;
+
+    }
 
     input {
       margin-top: 0.3rem;
@@ -150,7 +156,9 @@ main {
 
     #button-reset {
       background-color: hsl(183deg 47.68% 28.22%);
-      cursor: pointer;
+      color: hsl(183, 100%, 15%);
+      cursor: not-allowed;
+      opacity: 0.5;
       letter-spacing: 0.2rem;
       text-transform: uppercase;
       padding: 0.5rem;
@@ -158,10 +166,21 @@ main {
       border-radius: 5px;
       margin-top: 2rem;
       height: 40px;
+      font-weight: bold;
+      font-size: 15px;
 
       &.has-reset-activated {
-        background-color: $primary-color;
+        background-color: hsl(172deg 64.1% 71.35%);
         color: map-get($neutral-colors, 900);
+        cursor: pointer;
+        opacity: 1;
+      }
+
+      &:not(:disabled) {
+        background-color: hsl(172deg 64.1% 71.35%);
+        color: map-get($neutral-colors, 900);
+        cursor: pointer;
+        opacity: 1;
       }
     }
   }
